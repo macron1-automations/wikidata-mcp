@@ -1,0 +1,53 @@
+{
+  "name": "wikidata-mcp",
+  "version": "1.0.0",
+  "description": "Model Context Protocol (MCP) server for local Wikidata Truthy (QLever) knowledge grounding, entity resolution, and brief enrichment",
+  "main": "./dist/server.js",
+  "types": "./dist/server.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/server.d.ts",
+      "import": "./dist/server.js"
+    }
+  },
+  "bin": {
+    "wikidata-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist"
+  ],
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "start": "node dist/index.js",
+    "typecheck": "tsc --noEmit",
+    "test": "vitest run",
+    "prepublishOnly": "npm run build && npm run test"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "wikidata",
+    "qlever",
+    "sparql",
+    "osint",
+    "entity-resolution",
+    "knowledge-graph"
+  ],
+  "author": "Leonid Medovyy <leonid@macron1.io>",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.10.0",
+    "zod": "^3.24.2"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.4",
+    "tsup": "^8.3.6",
+    "typescript": "^5.7.3",
+    "vitest": "^3.0.5"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
